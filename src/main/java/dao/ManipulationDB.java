@@ -1,6 +1,13 @@
+package dao;
+
+import logic.Thing;
+
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ManipulationDB {
     //Field
@@ -11,6 +18,9 @@ public class ManipulationDB {
     private Statement statement;
     private PreparedStatement preparedStatement;
     //Constructor
+    public ManipulationDB(){
+        createConnect();
+    }
 
     //Function
     public void createConnect(){
@@ -28,13 +38,16 @@ public class ManipulationDB {
         }
     }
 
-    public void selectThingsFromDB (){
-        try {
-            statement = connectDB.getConnection().createStatement();
-            statement.executeQuery(selectAll);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public ResultSet selectThingsFromDB () throws SQLException {
+        statement = connectDB.getConnection().createStatement();
+        return statement.executeQuery(selectAll);
     }
+    public ArrayList getThingFromResultSet (ResultSet resultSet) throws SQLException {
+        ArrayList <Thing> list = null;
+        while (resultSet.next()){
+            list.add(new Thing(resultSet.getString(2), resultSet.getInt(3)));
+        }
+        return  list;
+    }
+
 }

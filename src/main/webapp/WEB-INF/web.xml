@@ -1,0 +1,24 @@
+ <!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD
+  Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+
+<web-app>
+
+    <servlet>
+        <servlet-name>AddThingServlet</servlet-name>
+        <servlet-class>frontend.AddThingServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowThingsServlet</servlet-name>
+        <servlet-class>frontend.ShowThingsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddThingServlet</servlet-name>
+        <url-pattern>/addThing</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowThingsServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>

@@ -62,7 +62,7 @@
 											"top": 335,
 											"width": 41.919921875,
 											"height": 13,
-											"text": "Thing"
+											"text": "logic.Thing"
 										},
 										{
 											"_type": "LabelView",
@@ -585,7 +585,7 @@
 											"top": 255,
 											"width": 56.32275390625,
 											"height": 13,
-											"text": "Frontend"
+											"text": "frontend.Frontend"
 										},
 										{
 											"_type": "LabelView",
@@ -1030,7 +1030,7 @@
 											"top": 287,
 											"width": 98.9345703125,
 											"height": 13,
-											"text": "ManipulationDB"
+											"text": "dao.ManipulationDB"
 										},
 										{
 											"_type": "LabelView",
@@ -1742,7 +1742,7 @@
 											"top": 255,
 											"width": 50.5400390625,
 											"height": 13,
-											"text": "RunApp"
+											"text": "logic.RunApp"
 										},
 										{
 											"_type": "LabelView",
@@ -2413,7 +2413,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFxb9dIpiR56/M="
 					},
-					"name": "Thing",
+					"name": "logic.Thing",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -2467,7 +2467,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFxb9dIpiR56/M="
 					},
-					"name": "Frontend",
+					"name": "frontend.Frontend",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -2513,7 +2513,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFxb9dIpiR56/M="
 					},
-					"name": "ManipulationDB",
+					"name": "dao.ManipulationDB",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -2579,7 +2579,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFxb9dIpiR56/M="
 					},
-					"name": "RunApp",
+					"name": "logic.RunApp",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",

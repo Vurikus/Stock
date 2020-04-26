@@ -1,3 +1,5 @@
+package logic;
+
 public class Thing
 {
     //Field
@@ -29,5 +31,9 @@ public class Thing
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setNameThing(String nameThing, int anInt) {
+        this.nameThing = nameThing;
     }
 }

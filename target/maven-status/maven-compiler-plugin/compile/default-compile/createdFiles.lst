@@ -1,0 +1,8 @@
+Main.class
+dao\ManipulationDB.class
+logic\RunApp.class
+frontend\AddThingServlet.class
+frontend\Model.class
+frontend\ShowThingsServlet.class
+dao\ConnectDB.class
+logic\Thing.class
