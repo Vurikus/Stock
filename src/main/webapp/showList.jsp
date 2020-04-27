@@ -1,5 +1,7 @@
 <%@ page import="logic.Thing" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="static com.sun.xml.internal.ws.policy.sourcemodel.wspolicy.XmlToken.Name" %>
+<%--
   Created by IntelliJ IDEA.
   User: Ivan
   Date: 26.04.2020
@@ -12,16 +14,26 @@
     <title>Show list of things</title>
 </head>
 <body>
-    <% ArrayList<Thing> list = (ArrayList<Thing>) request.getAttribute("list");
-        if (!list.isEmpty()){
-            for (int i=0; i<list.size(); i++) {
-                String s = list.get(i).getNameThing();
-                int quantity = list.get(i).getQuantity();
-                out.println("<p>" + s + " - " + quantity + "</p>");
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Thing</td>
+            <td>Quantity</td>
+        </tr>
+
+        <% ArrayList<Thing> list = (ArrayList<Thing>) request.getAttribute("list");
+            if (!list.isEmpty()){
+                for (int i=0; i<list.size(); i++) {
+                    int id = list.get(i).getID();
+                    String s = list.get(i).getNameThing();
+                    int quantity = list.get(i).getQuantity();
+                    out.println("<tr><td>" + id + " </td><td>  " + s + " </td><td>  " + quantity + "</td></tr>");
+                }
             }
-        }
-        else out.println("<p> List is empty! Please, put anything </p>");
-    %>
+            else out.println("<p> List is empty! Please, put anything </p>");
+        %>
+    </table>
+    <br/>
     <button onclick="location.href='/addThing'">Add new Thing</button>
 
 </body>

@@ -9,6 +9,9 @@ public class Thing
 
     //Constructor
 
+    public Thing (){
+
+    }
     public Thing(String nameThing, int quantity) {
         this.nameThing = nameThing;
         this.quantity = quantity;
@@ -25,6 +28,10 @@ public class Thing
         return ID;
     }
 
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
     public String getNameThing() {
         return nameThing;
     }
@@ -33,7 +40,7 @@ public class Thing
         return quantity;
     }
 
-    public void setNameThing(String nameThing, int anInt) {
+    public void setNameThing(String nameThing) {
         this.nameThing = nameThing;
     }
 }

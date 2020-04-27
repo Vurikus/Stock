@@ -18,5 +18,6 @@
         </label>
         <button type="submit">Save thing</button>
     </form>
+    <button onclick="location.href='/'">Show list Things</button>
 </body>
 </html>

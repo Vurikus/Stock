@@ -1,9 +1,10 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import logic.Thing;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConnectDB
 {
@@ -12,9 +13,10 @@ public class ConnectDB
     private String user = "postgres";
     private String password = "1";
     private Connection connection;
+    private static ConnectDB connectDB = new ConnectDB();
     //Constructor
 
-    public ConnectDB() {
+    private ConnectDB() {
 
         try {
             connection = DriverManager.getConnection(URL, user, password);
@@ -28,7 +30,37 @@ public class ConnectDB
     //Function
 
 
-    public Connection getConnection() {
-        return connection;
+    public static ConnectDB getConnectDB() {
+        return connectDB;
+    }
+
+    public void insertThingDB (Thing thing){
+        try {
+            PreparedStatement statement = connection.prepareStatement("insert into things (namething, quantity) values (?, ?)");
+            statement.setString(1, thing.getNameThing());
+            statement.setInt(2, thing.getQuantity());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Thing> selectFromDB (){
+        List <Thing> list = new ArrayList<>();
+        try {
+            ResultSet resultSet = connection
+                    .prepareStatement("select * from things")
+                    .executeQuery();
+            while (resultSet.next()) {
+                Thing thing = new Thing();
+                thing.setID(resultSet.getInt("id"));
+                thing.setNameThing(resultSet.getString("namething"));
+                thing.setQuantity(resultSet.getInt("quantity"));
+                list.add(thing);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }

@@ -1,5 +1,4 @@
 Main.class
-dao\ManipulationDB.class
 logic\RunApp.class
 frontend\AddThingServlet.class
 frontend\Model.class

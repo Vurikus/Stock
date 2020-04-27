@@ -1,5 +1,6 @@
 package frontend;
 
+import dao.ConnectDB;
 import logic.Thing;
 
 import java.util.ArrayList;
@@ -7,22 +8,23 @@ import java.util.List;
 
 public class Model {
     private static Model instance = new Model();
-
-    private List<Thing> modelList;
+    private ConnectDB connectDB = ConnectDB.getConnectDB();
+    private List <Thing> listThing = new ArrayList<>();
 
     public static Model getInstance() {
         return instance;
     }
 
     private Model() {
-        modelList = new ArrayList<>();
     }
 
-    public void add(Thing thing) {
-        modelList.add(thing);
+    public void addThing(Thing thing) {
+        connectDB.insertThingDB(thing);
     }
 
-    public List<Thing> getList() {
-        return modelList;
+
+    public List <Thing> getListThing (){
+        return connectDB.selectFromDB();
     }
+
 }

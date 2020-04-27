@@ -28,7 +28,7 @@ public class AddThingServlet extends HttpServlet
         String s = req.getParameter("name");
         int i = Integer.parseInt(req.getParameter("quantity"));
         Model model = Model.getInstance();
-        model.add(new Thing(s, i));
+        model.addThing(new Thing(s, i));
         doGet(req, resp);
     }
 }
