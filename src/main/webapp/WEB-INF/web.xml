@@ -11,14 +11,22 @@
         <servlet-name>ShowThingsServlet</servlet-name>
         <servlet-class>frontend.ShowThingsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>frontend.user.Login</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddThingServlet</servlet-name>
         <url-pattern>/addThing</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ShowThingsServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/showThing</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1> Add new Thing and his quantity</h1>
+    <button onclick="location.href='/login'">Log in</button>
 
     <form method="post">
         <label>Name thing:
@@ -18,6 +19,6 @@
         </label>
         <button type="submit">Save thing</button>
     </form>
-    <button onclick="location.href='/'">Show list Things</button>
+    <button onclick="location.href='/showThing'">Show list Things</button>
 </body>
 </html>

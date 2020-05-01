@@ -9,6 +9,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored = "false" %>
+
 <html>
 <head>
     <title>Show list of things</title>
@@ -20,18 +23,14 @@
             <td>Thing</td>
             <td>Quantity</td>
         </tr>
+        <c:forEach var="Thing" items="${list}">
+            <tr>
+                <td>${Thing.ID}</td>
+                <td>${Thing.nameThing}</td>
+                <td>${Thing.quantity}</td>
+            </tr>
+        </c:forEach>
 
-        <% ArrayList<Thing> list = (ArrayList<Thing>) request.getAttribute("list");
-            if (!list.isEmpty()){
-                for (int i=0; i<list.size(); i++) {
-                    int id = list.get(i).getID();
-                    String s = list.get(i).getNameThing();
-                    int quantity = list.get(i).getQuantity();
-                    out.println("<tr><td>" + id + " </td><td>  " + s + " </td><td>  " + quantity + "</td></tr>");
-                }
-            }
-            else out.println("<p> List is empty! Please, put anything </p>");
-        %>
     </table>
     <br/>
     <button onclick="location.href='/addThing'">Add new Thing</button>

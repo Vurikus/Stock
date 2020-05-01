@@ -21,9 +21,9 @@ public class ShowThingsServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Model model = Model.getInstance();
-        List <Thing> listThings = model.getListThing();
+        List <Thing> list = model.getListThing();
 
-        req.setAttribute("list", listThings);
+        req.setAttribute("list", list);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("showList.jsp");
         requestDispatcher.forward(req, resp);
     }
