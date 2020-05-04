@@ -2,37 +2,27 @@ package dao;
 
 import logic.Thing;
 
-import java.sql.*;
+import javax.naming.NamingException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConnectDB
-{
+public class SimpleConnection {
     //Field
-    private String URL = "jdbc:postgresql://localhost:5432/stockDB";
-    private String user = "postgres";
-    private String password = "1";
+    private ConnectionPool connectionPool;
     private Connection connection;
-    private static ConnectDB connectDB = new ConnectDB();
+
     //Constructor
 
-    private ConnectDB() {
-
-        try {
-            connection = DriverManager.getConnection(URL, user, password);
-            System.out.println("Connect is ready");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public SimpleConnection() throws SQLException, NamingException {
+        connectionPool = ConnectionPool.getInstance();
+        connection = connectionPool.getConnection();
     }
 
     //Function
-
-
-    public static ConnectDB getConnectDB() {
-        return connectDB;
-    }
 
     public void insertThingDB (Thing thing){
         try {

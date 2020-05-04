@@ -33,7 +33,7 @@
 
     </table>
     <br/>
-    <button onclick="location.href='/addThing'">Add new Thing</button>
+    <button onclick="location.href='/stock/addThing'">Add new Thing</button>
 
 </body>
 </html>

@@ -1,9 +1,8 @@
 D:\Java\my_progs\stock\src\main\java\logic\Thing.java
-D:\Java\my_progs\stock\src\main\java\Main.java
+D:\Java\my_progs\stock\src\main\java\dao\ConnectionPool.java
+D:\Java\my_progs\stock\src\main\java\dao\SimpleConnection.java
 D:\Java\my_progs\stock\src\main\java\logic\user\User.java
 D:\Java\my_progs\stock\src\main\java\frontend\Model.java
-D:\Java\my_progs\stock\src\main\java\dao\ConnectDB.java
-D:\Java\my_progs\stock\src\main\java\logic\RunApp.java
 D:\Java\my_progs\stock\src\main\java\frontend\ShowThingsServlet.java
 D:\Java\my_progs\stock\src\main\java\frontend\AddThingServlet.java
 D:\Java\my_progs\stock\src\main\java\frontend\user\Login.java

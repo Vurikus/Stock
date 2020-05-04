@@ -19,6 +19,6 @@
         </label>
         <button type="submit">Save thing</button>
     </form>
-    <button onclick="location.href='/showThing'">Show list Things</button>
+    <button onclick="location.href='/stock/showThing'">Show list Things</button>
 </body>
 </html>

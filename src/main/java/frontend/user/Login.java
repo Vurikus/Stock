@@ -24,7 +24,7 @@ public class Login extends HttpServlet {
         for (User user: listUsers) {
             if(login.equals(user.getLogin())){
                 if (password.equals(user.getPassword())){
-                    request.getRequestDispatcher().forward(request, response);
+                    request.getRequestDispatcher("/login.jsp").forward(request, response);
                 }
                 else {
                     request.setAttribute("error", "password error");

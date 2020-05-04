@@ -1,9 +1,8 @@
-Main.class
 frontend\user\Login.class
 logic\user\User.class
-logic\RunApp.class
 frontend\AddThingServlet.class
+dao\ConnectionPool.class
 frontend\Model.class
 frontend\ShowThingsServlet.class
-dao\ConnectDB.class
+dao\SimpleConnection.class
 logic\Thing.class

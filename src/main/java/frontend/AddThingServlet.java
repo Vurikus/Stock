@@ -1,21 +1,36 @@
 package frontend;
 
+import dao.SimpleConnection;
 import logic.Thing;
 
+import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+import java.sql.SQLException;
 
 public class AddThingServlet extends HttpServlet
 {
     //Field
+    private SimpleConnection simpleConnection;
     //Constructor
 
     //Function
+
+
+    @Override
+    public void init() throws ServletException {
+        try {
+            simpleConnection = new SimpleConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,8 +42,10 @@ public class AddThingServlet extends HttpServlet
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String s = req.getParameter("name");
         int i = Integer.parseInt(req.getParameter("quantity"));
-        Model model = Model.getInstance();
-        model.addThing(new Thing(s, i));
+        //Model model = Model.getInstance();
+        //model.setSimpleConnection(simpleConnection);
+        //model.addThing(new Thing(s, i));
+        simpleConnection.insertThingDB(new Thing(s, i));
         doGet(req, resp);
     }
 }

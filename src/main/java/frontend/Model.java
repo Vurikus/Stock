@@ -1,6 +1,6 @@
 package frontend;
 
-import dao.ConnectDB;
+import dao.SimpleConnection;
 import logic.Thing;
 import logic.user.User;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Model {
     private static Model instance = new Model();
-    private ConnectDB connectDB = ConnectDB.getConnectDB();
+    private SimpleConnection simpleConnection;
     private List <Thing> listThing = new ArrayList<>();
     private List <User> listUser = new ArrayList<>();
 
@@ -18,15 +18,23 @@ public class Model {
     }
 
     private Model() {
-        addUser(new User ("ivan", "email", "123"));
+        //addUser(new User ("ivan", "email", "123"));
     }
 
     public void addThing(Thing thing) {
-        connectDB.insertThingDB(thing);
+        simpleConnection.insertThingDB(thing);
+    }
+
+    public SimpleConnection getSimpleConnection() {
+        return simpleConnection;
+    }
+
+    public void setSimpleConnection(SimpleConnection simpleConnection) {
+        this.simpleConnection = simpleConnection;
     }
 
     public List <Thing> getListThing (){
-        return connectDB.selectFromDB();
+        return simpleConnection.selectFromDB();
     }
 
     public void addUser (User user){
