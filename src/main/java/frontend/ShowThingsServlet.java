@@ -3,9 +3,11 @@ package frontend;
 import dao.SimpleConnection;
 import logic.Thing;
 
+import javax.jws.WebService;
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,11 +38,7 @@ public class ShowThingsServlet extends HttpServlet
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //Model model = Model.getInstance();
-        //model.setSimpleConnection(simpleConnection);
-
         List <Thing> list = simpleConnection.selectFromDB();
-
         req.setAttribute("list", list);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("showList.jsp");
         requestDispatcher.forward(req, resp);

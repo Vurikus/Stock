@@ -42,9 +42,6 @@ public class AddThingServlet extends HttpServlet
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String s = req.getParameter("name");
         int i = Integer.parseInt(req.getParameter("quantity"));
-        //Model model = Model.getInstance();
-        //model.setSimpleConnection(simpleConnection);
-        //model.addThing(new Thing(s, i));
         simpleConnection.insertThingDB(new Thing(s, i));
         doGet(req, resp);
     }
