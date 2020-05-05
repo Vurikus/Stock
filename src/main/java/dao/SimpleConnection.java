@@ -26,9 +26,10 @@ public class SimpleConnection {
 
     public void insertThingDB (Thing thing){
         try {
-            PreparedStatement statement = connection.prepareStatement("insert into things (namething, quantity) values (?, ?)");
+            PreparedStatement statement = connection.prepareStatement("insert into things (namething, quantity, date_added) values (?, ?, ?)");
             statement.setString(1, thing.getNameThing());
             statement.setInt(2, thing.getQuantity());
+            statement.setDate(3, thing.getAddThingDate());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -46,6 +47,7 @@ public class SimpleConnection {
                 thing.setID(resultSet.getInt("id"));
                 thing.setNameThing(resultSet.getString("namething"));
                 thing.setQuantity(resultSet.getInt("quantity"));
+                thing.setAddThingDate(resultSet.getDate("date_added"));
                 list.add(thing);
             }
         } catch (SQLException e) {

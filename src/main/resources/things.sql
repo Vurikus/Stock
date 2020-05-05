@@ -1,0 +1,1 @@
+alter table things add column date_added date;

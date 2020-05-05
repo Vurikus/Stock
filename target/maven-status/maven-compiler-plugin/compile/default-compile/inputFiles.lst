@@ -1,6 +1,7 @@
 D:\Java\my_progs\stock\src\main\java\logic\Thing.java
 D:\Java\my_progs\stock\src\main\java\dao\ConnectionPool.java
 D:\Java\my_progs\stock\src\main\java\dao\SimpleConnection.java
+D:\Java\my_progs\stock\src\main\java\frontend\DateAdapter.java
 D:\Java\my_progs\stock\src\main\java\logic\user\User.java
 D:\Java\my_progs\stock\src\main\java\frontend\ShowThingsServlet.java
 D:\Java\my_progs\stock\src\main\java\frontend\JerseyServlet.java

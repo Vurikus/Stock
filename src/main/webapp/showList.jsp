@@ -1,5 +1,8 @@
 <%@ page import="logic.Thing" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.sql.Date" %>
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.time.format.DateTimeFormatter"%>
 <%@ page import="static com.sun.xml.internal.ws.policy.sourcemodel.wspolicy.XmlToken.Name" %>
 <%--
   Created by IntelliJ IDEA.
@@ -22,12 +25,14 @@
             <td>ID</td>
             <td>Thing</td>
             <td>Quantity</td>
+            <td>Date added</td>
         </tr>
         <c:forEach var="Thing" items="${list}">
             <tr>
                 <td>${Thing.ID}</td>
                 <td>${Thing.nameThing}</td>
                 <td>${Thing.quantity}</td>
+                <td>${Thing.addThingDate.toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))}</td>
             </tr>
         </c:forEach>
 
