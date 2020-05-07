@@ -25,6 +25,7 @@
             <td>ID</td>
             <td>Thing</td>
             <td>Quantity</td>
+            <td>Life time</td>
             <td>Date added</td>
         </tr>
         <c:forEach var="Thing" items="${list}">
@@ -32,6 +33,7 @@
                 <td>${Thing.ID}</td>
                 <td>${Thing.nameThing}</td>
                 <td>${Thing.quantity}</td>
+                <td>${Thing.lifeTime}</td>
                 <td>${Thing.addThingDate.toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))}</td>
             </tr>
         </c:forEach>

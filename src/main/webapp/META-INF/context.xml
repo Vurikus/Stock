@@ -8,7 +8,7 @@
             maxIdle="2"
             maxWait="5000"
             username="postgres"
-            password="1"
+            password="123"
             type="javax.sql.DataSource"
             url="jdbc:postgresql://localhost:5432/stockDB?autoReconnect=true"
             validationQuery="SELECT 1">

@@ -17,6 +17,9 @@
         <label>Quantity:
             <input type="text" name="quantity"><br />
         </label>
+        <label>Life time:
+            <input type="text" name="lifeTime"><br />
+        </label>
         <button type="submit">Save thing</button>
     </form>
     <button onclick="location.href='/stock/showThing'">Show list Things</button>
