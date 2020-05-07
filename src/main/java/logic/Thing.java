@@ -90,4 +90,15 @@ public class Thing
     public void setAddThingDate(Date addThingDate) {
         this.addThingDate = addThingDate;
     }
+
+    @Override
+    public String toString() {
+        return "Thing{" +
+                "ID=" + ID +
+                ", nameThing='" + nameThing + '\'' +
+                ", quantity=" + quantity +
+                ", lifeTime=" + lifeTime +
+                ", addThingDate=" + addThingDate +
+                '}';
+    }
 }

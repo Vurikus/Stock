@@ -8,8 +8,13 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
 
 public class ManagerThings {
     //Field
@@ -18,6 +23,26 @@ public class ManagerThings {
 
     //Function
     public static void main(String[] args) {
+        //sessionExample();
+        jpaExample();
+    }
+
+    private static void jpaExample() {
+        Map properties;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Thing thing = new Thing("Meat", 2, 1);
+        em.persist(thing);
+        em.getTransaction().commit();
+
+        em = emf.createEntityManager();
+        List list = em.createQuery("from Thing").getResultList();
+        list.forEach(p -> System.out.println(p));
+        em.close();
+    }
+
+    private static void sessionExample() {
         SessionFactory sf = buildSessionFactory();
         Session session = sf.openSession();
         session.getTransaction().begin();

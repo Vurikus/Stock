@@ -1,9 +1,10 @@
+logic\manager\ManagerThings.class
 frontend\user\Login.class
-logic\user\User.class
-frontend\DateAdapter.class
 frontend\AddThingServlet.class
 frontend\JerseyServlet.class
-dao\ConnectionPool.class
 frontend\ShowThingsServlet.class
 dao\SimpleConnection.class
+logic\user\User.class
+frontend\DateAdapter.class
+dao\ConnectionPool.class
 logic\Thing.class
